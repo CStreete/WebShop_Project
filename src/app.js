@@ -21,7 +21,7 @@ fetch('https://fakestoreapi.com/products/')
 
         sortedItemCategorys.forEach(element => {
             filterButtons.innerHTML += 
-            `<button class =" mx-10 my-10 px-2 py-2  border-2 border-black rounded-lg hover:bg-black hover:text-white">${element.toUpperCase()}</button>`
+            `<button class =" mx-10 my-10 px-5 py-3  border-b-2 border-black hover:border-2 hover:  hover:ease-in">${element.toUpperCase()}</button>`
         })
 
 
@@ -30,7 +30,7 @@ fetch('https://fakestoreapi.com/products/')
             let titles = item.title;
             let price = item.price;
             itemSection.innerHTML +=
-            `<article class=" flex flex-col items-center justify-center w-96 h-96">
+            `<article class=" flex flex-col items-center justify-center w-96 h-96 cursor-pointer">
             <img src="${imageURL}" alt="" width = "200" class=" w-60 h-60">
             <h2 class=" pt-10">${titles}</h2>
             <h2 class=" text-sm text-gray-400">KR ${price} SEK</h2>
