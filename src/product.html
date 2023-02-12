@@ -25,10 +25,12 @@
                 
             <ul class="flex text-black items-center space-x-10">
                 
-                <li><a href="index.html">
-                    Home
-                </a></li>
-               
+                <li>
+                    <a href="index.html">
+                    Shop
+                    </a>
+                </li>
+                
                 <li class="relative">
                     <button id="cartBtn"> <i class="fa-solid fa-cart-shopping"></i></button>
                     <div id="itemNumber"class="absolute top-0 bottom-0 left-5 bg-black rounded-full w-4 h-6 text-center text-white "></div>
@@ -36,33 +38,28 @@
             </ul>
         </nav>
     </header>
-
     <main>
-
-        <div id="cart-wrapper" class="hidden absolute right-0 w-96 h-fit text-black shadow-black shadow-md bg-white" >
-            <h1 class="text-center">Shopping Cart</h1>
-            <div id="show-products" class="  bg-white">
+        
+        <div id="cart-wrapper" class="hidden absolute right-0 w-96 h-fit text-black  shadow-black shadow-md" > 
+            <h1 class="text-center text-lg pb-2">Shopping Cart</h1>
+            <div id="show-products">
+               
             </div>
             <div class="flex justify-center">
-                <a href="checkout.html" class=" px-2 py-1 my-2 bg-black text-white ">Check Out</a>
-               
-             </div>  
+            <a href="checkout.html" class=" px-2 py-1 my-2 bg-black text-white ">Check Out</a>
+           
+         </div>  
+         <p id="display-price" class=" text-lg text-black text-center pb-2" >Total Price:</p>
         </div>
-        <h1 class="text-3xl pt-20 text-center">Our Products</h1>
-        <div id="filter-buttons" class="flex justify-center fl">
-            <button data-id="all" class ="filter-btn mx-10 my-10 px-5 py-3  border-b-2 border-black hover:border-2 hover:bg-black hover:text-white  hover:ease-in">ALL</button>
-        </div>
-        <section id="items" class="flex flex-wrap justify-center">
-            
-        </section> 
+        <section id="product" class="flex flex-col  justify-center h-screen items-center">
+           
+        </section>
+        
+        
     </main>
-    
 
-
-    <script src="/src/app.js">
-
-    </script>
+   <script src="/src/product.js"></script>
    
-    
+   
 </body>
 </html>

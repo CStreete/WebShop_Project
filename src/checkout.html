@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/dist/output.css">
+    <script src="https://kit.fontawesome.com/54da2c0dbc.js" crossorigin="anonymous"></script>
+    <title>Triple-C</title>
+</head>
+<body>
+    <div id="topBar" class="bg-black w-full">
+        <p class="text-white font-normal text-sm h-7 flex items-center justify-center"> 
+            FREE SHIPPING ON ALL ORDERS OVER 500KR
+        </p>
+    </div>
+    <header>
+        <nav class="flex justify-between items-center h-14 px-20 border-b-2 border-black">
+            <div>
+                <h1 class="text-2xl w-40">CCC</h1>
+            </div>
+                
+            <ul class="flex text-black items-center space-x-10">
+                <li>
+                    <a href="index.html">
+                    Home
+                    </a>
+                </li>
+                
+               
+            </ul>
+        </nav>
+        <main>
+            <section id="main-wrapper" class=" flex flex-col justify-center items-center">
+                <div class="display mt-40 w-1/2 flex flex-col items-center">
+                    <h1 class="text-3xl font-semibold">Shopping Cart</h1>
+                <div id="shipping-alert" class="bg-green-200 w-2/4 mt-6 pl-3 h-12 flex items-center text-lg text-green-600">
+                    <i class="fa-regular fa-circle-check pr-2"></i>
+                     <span id="shipping" class="">You have free shipping!</span>     
+                       
+                </div>
+                <div id="display-wrapper" class=" w-full flex flex-col items-center">
+                <div id="display-cart-items" class=" w-2/4">
+                    <div class="pt-4 h-14 pl-4 font-semibold text-lg border-b-2 border-black">
+                        <h3>Sent From CCC</h3>
+                    </div>
+                    
+                </div>
+                <div class="  w-2/4 pl-4 pr-4 border-b-2 border-black pb-3">
+                    <div class="flex justify-between ">
+                        <span>Products</span>
+                        <span class="amount"></span>
+                    </div>
+                    <div class="flex justify-between">
+                        <span>Total Sum</span>
+                        <span class="amount"></span>
+                    </div>
+                </div>
+                <div class="flex justify-between  w-2/4 pl-4 pr-4 pt-6">
+                    <span>To Pay</span>
+                    <span class="amount"></span>
+                </div>
+                <div class="flex justify-between  w-2/4 pl-4 pr-4 pt-6">
+                    <button id="pay-now-btn" class=" bg-black text-white w-full h-10 text-lg">PAY NOW</button>
+                </div>
+            </div>
+                <div class=" w-2/4 pt-16">
+                   
+                </div>
+            </section>
+            
+        </main>
+    </header>
+   <script src="/src/checkout.js"></script>
+   
+   
+   
+</body>
+</html>
