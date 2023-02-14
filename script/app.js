@@ -8,7 +8,7 @@ const cartBtn = document.getElementById('cartBtn');
 const cart = document.getElementById('cart-wrapper');
 const showProducts = document.getElementById('show-products');
 const itemNumber = document.getElementById('itemNumber');
-
+const displayPrice = document.getElementById('display-price');
 
 fetch('https://fakestoreapi.com/products/')
     .then(res => res.json())
@@ -59,6 +59,12 @@ fetch('https://fakestoreapi.com/products/')
             </div>
             `
            })
+
+           let totalPrice = 0;
+           for (let i = 0; i < localCart.length; i++) {
+                totalPrice += localCart[i].price;
+           }
+           displayPrice.innerHTML = Math.round(totalPrice) + ' SEK';
         
     }
 
