@@ -24,23 +24,28 @@ fetch('https://fakestoreapi.com/products/')
     
     function displayCart(){
         let localTest = JSON.parse(localStorage.getItem('cart'));
-       
-        
-           localTest.forEach(item => {
-            showProducts.innerHTML += `
-            <div class="flex pb-6">
-                <img src="${item.image}" alt="productIMG" width = "50" class=" ml-1 mb-3" >
-                <div class="flex flex-col pl-2">
-                    <p class=" w-full">${item.title}</p>
-                    <p class=" text-sm text-gray-400">KR ${item.price} SEK</p>
-                    
-                    <div class="flex">
-                        <button onclick="deleteItem(${item.id})" id="delBtn" class=" w-fit"> <i class="fa-solid fa-xmark"></i> </button>
-                    </div
+        if(localTest.length > 1 ){
+            itemNumber.innerHTML = localTest.length;
+            localTest.forEach(item => {
+                showProducts.innerHTML += `
+                <div class="flex pb-6">
+                    <img src="${item.image}" alt="productIMG" width = "50" class=" ml-1 mb-3" >
+                    <div class="flex flex-col pl-2">
+                        <p class=" w-full">${item.title}</p>
+                        <p class=" text-sm text-gray-400">KR ${item.price} SEK</p>
+                        
+                        <div class="flex">
+                            <button onclick="deleteItem(${item.id})" id="delBtn" class=" w-fit"> <i class="fa-solid fa-xmark"></i> </button>
+                        </div
+                    </div>
                 </div>
-            </div>
-            `
-           })
+                `
+               })
+        } else{
+            itemNumber.innerHTML = 0;
+        }
+        
+          
         
     }
 

@@ -1,6 +1,6 @@
 "use strict";
 
-onload = (event) => {
+onload = () => {
     if(localCart.length > 0){
         cart.classList.remove('hidden');
         for (const item of localCart) {
