@@ -24,7 +24,12 @@ fetch('https://fakestoreapi.com/products/')
     
     function displayCart(){
         let localTest = JSON.parse(localStorage.getItem('cart'));
-        itemNumber.innerHTML = localTest.length;
+        if(localTest.length > 1 ){
+            itemNumber.innerHTML = localTest.length;
+        } else{
+            itemNumber.innerHTML = 0;
+        }
+        
            localTest.forEach(item => {
             showProducts.innerHTML += `
             <div class="flex pb-6">
