@@ -9,21 +9,37 @@ const cart = document.getElementById('cart-wrapper');
 const showProducts = document.getElementById('show-products');
 const itemNumber = document.getElementById('itemNumber');
 
-let localCart = JSON.parse(localStorage.getItem('cart'));
+
 fetch('https://fakestoreapi.com/products/')
     .then(res => res.json())
     .then(data => renderApp(data))
        
-  
- 
+
+
+    if(!localStorage.getItem('cart')){
+        localStorage.setItem('cart', "[]");
+    }
+
+    let localCart = JSON.parse(localStorage.getItem('cart'));
+    let localProducts = JSON.parse(localStorage.getItem('products'));
 
     
+    function shoppingCart(){
+        let addProduct = localProducts.find(product => product.id == localStorage.getItem('productID'));
+        if(cart.length == 0){
+            localCart.push(addProduct);
+        }else{
+            let res = localCart.find(element => element.id == localStorage.getItem('productID'));
+            if(res === undefined){
+                localCart.push(addProduct);
+            }
+        }
+        localStorage.setItem('cart', JSON.stringify(localCart));
+    }
 
-    
-    //{window.addEventListener('DOMContentLoaded', renderApp(data))}
-    
+   
     function displayCart(){
-        let localCart = JSON.parse(localStorage.getItem('cart'));
+        
         
             itemNumber.innerHTML = localCart.length;
         
@@ -55,7 +71,7 @@ fetch('https://fakestoreapi.com/products/')
   
 
     function renderApp(data){
-        // Buttons  
+       
         renderItems(data);
         displayCart();
         renderButtons(data)
