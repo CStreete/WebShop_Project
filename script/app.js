@@ -23,29 +23,26 @@ fetch('https://fakestoreapi.com/products/')
     //{window.addEventListener('DOMContentLoaded', renderApp(data))}
     
     function displayCart(){
-        let localTest = JSON.parse(localStorage.getItem('cart'));
-        if(localTest.length > 1 ){
-            itemNumber.innerHTML = localTest.length;
-            localTest.forEach(item => {
-                showProducts.innerHTML += `
-                <div class="flex pb-6">
-                    <img src="${item.image}" alt="productIMG" width = "50" class=" ml-1 mb-3" >
-                    <div class="flex flex-col pl-2">
-                        <p class=" w-full">${item.title}</p>
-                        <p class=" text-sm text-gray-400">KR ${item.price} SEK</p>
-                        
-                        <div class="flex">
-                            <button onclick="deleteItem(${item.id})" id="delBtn" class=" w-fit"> <i class="fa-solid fa-xmark"></i> </button>
-                        </div
-                    </div>
-                </div>
-                `
-               })
-        } else{
-            itemNumber.innerHTML = 0;
-        }
+        let localCart = JSON.parse(localStorage.getItem('cart'));
         
-          
+            itemNumber.innerHTML = localCart.length;
+        
+        
+           localCart.forEach(item => {
+            showProducts.innerHTML += `
+            <div class="flex pb-6">
+                <img src="${item.image}" alt="productIMG" width = "50" class=" ml-1 mb-3" >
+                <div class="flex flex-col pl-2">
+                    <p class=" w-full">${item.title}</p>
+                    <p class=" text-sm text-gray-400">KR ${item.price} SEK</p>
+                    
+                    <div class="flex">
+                        <button onclick="deleteItem(${item.id})" id="delBtn" class=" w-fit"> <i class="fa-solid fa-xmark"></i> </button>
+                    </div
+                </div>
+            </div>
+            `
+           })
         
     }
 
@@ -58,11 +55,12 @@ fetch('https://fakestoreapi.com/products/')
   
 
     function renderApp(data){
-        // Buttons 
+        // Buttons  
+        renderItems(data);
         displayCart();
         renderButtons(data)
         filterItems(data);
-        renderItems(data);
+       
         
        
         // Save Products To Local Storage
