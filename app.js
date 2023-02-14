@@ -12,9 +12,9 @@ const itemNumber = document.getElementById('itemNumber');
 let localCart = JSON.parse(localStorage.getItem('cart'));
 fetch('https://fakestoreapi.com/products/')
     .then(res => res.json())
-    .then(data => {window.addEventListener('DOMContentLoaded', renderApp(data) 
+    .then(data => renderApp(data))
        
-    )})
+  
  
 
     
